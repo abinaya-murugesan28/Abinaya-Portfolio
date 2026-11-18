@@ -1,0 +1,15 @@
+name: Pull Request Checks
+on:
+  pull_request:
+    branches: [develop, main]
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm portfolio files
+        run: |
+          test -f index.html
+          test -f css/theme.css
+          test -f css/style.css
+          test -f js/main.js

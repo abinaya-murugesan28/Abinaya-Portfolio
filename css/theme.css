@@ -1,0 +1,23 @@
+/* Change the variables here to customise the whole website theme. */
+:root {
+  --bg: #f6f4ef;
+  --surface: #eeece5;
+  --surface-soft: #e7e4dc;
+  --text: #353832;
+  --muted: #77796f;
+  --accent: #82917b;
+  --accent-dark: #66745f;
+  --border: #dedbd2;
+  --shadow: 0 14px 35px rgba(53, 56, 50, .08);
+}
+[data-theme="dark"] {
+  --bg: #242723;
+  --surface: #2d302b;
+  --surface-soft: #383b35;
+  --text: #ecebe4;
+  --muted: #b4b5aa;
+  --accent: #a6b39d;
+  --accent-dark: #c0cbb8;
+  --border: #454840;
+  --shadow: 0 14px 35px rgba(0, 0, 0, .16);
+}

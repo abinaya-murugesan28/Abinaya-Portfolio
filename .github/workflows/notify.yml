@@ -1,0 +1,16 @@
+name: Workflow Notification
+on:
+  workflow_run:
+    workflows: ["Validate Website", "Deploy Portfolio", "Pull Request Checks"]
+    types: [completed]
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify in workflow log
+        run: echo "A portfolio workflow has completed with status ${{ github.event.workflow_run.conclusion }}"
+      - name: Optional Slack notification
+        if: ${{ env.SLACK_WEBHOOK_URL != '' }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: echo "Slack notification is configured."
